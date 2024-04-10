@@ -1,0 +1,43 @@
+import personas.*
+import spa.*
+
+describe "testeando situacion inicial gente"{
+	
+	test "inicio olivia"{
+		assert.equals(6, olivia.concentracion())
+	}
+	
+	test "inicio bruno"{
+		assert.equals(55000, bruno.peso())
+		assert.that(bruno.esFeliz())
+		assert.notThat(bruno.tieneSed())
+	}
+	
+	test "inicio ramiro"{
+		assert.equals(0, ramiro.nivelContractura())
+		assert.notThat(ramiro.pielGrasosa())
+	}
+	
+}
+
+describe "testeando atender gente"{
+	
+	test "atendiendo a olivia"{
+		spa.atender(olivia)
+		assert.equals(9, olivia.concentracion())
+	}
+	
+	test "atendiendo a bruno"{
+		spa.atender(bruno)
+		assert.that(bruno.esFeliz())
+		assert.equals(54500, bruno.peso())
+		assert.that(bruno.tieneSed())
+	}
+	
+	test "atendiendo a ramiro"{
+		spa.atender(ramiro)
+		assert.equals(0, ramiro.nivelContractura())
+		assert.notThat(ramiro.pielGrasosa())
+	}
+	
+}
